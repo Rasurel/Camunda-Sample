@@ -19,7 +19,9 @@
     <h:form id="submitForm">
       <h:panelGrid columns="2">
 
-   				 <label for="Type">Question Type</label>
+   				 <label for="Type">Question Type</label> 
+   				 <br></br>
+   				 <br></br>
    				 <input class="form-control"
           			 cam-variable-type="String"
           			 cam-variable-name="Type"
@@ -27,10 +29,10 @@
            				value="#{processVariables['type']}"
            				 readonly="true" />
           				<br></br>
+          				<br></br>
           <label for="question">Question Text</label>
           <!-- create process variables using the processVariables map. -->
           <p><textarea name="question" rows="7" cols="50" value="#{processVariables['question']}" readonly="true"></textarea></p>
-          <br></br>
           <label for="answer">Answer Text</label>
           <!-- create process variables using the processVariables map. -->
           <p><textarea name="answer" rows="7" cols="50" value="#{processVariables['answer']}" required="true" ></textarea></p>

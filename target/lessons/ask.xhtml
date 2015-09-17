@@ -19,8 +19,10 @@
     <h:form id="submitForm">
       <h:panelGrid columns="2">
         <p>
-          <label for="type">Question Type</label>
+          <label for="type">Question Type</label> 
+          <br></br>
           <h:selectOneMenu id="type" value="#{processVariables['type']}">
+              <f:selectItem itemValue=" " itemLabel=" "/>
               <f:selectItem itemValue="Personal" itemLabel="Personal"/>
               <f:selectItem itemValue="Java" itemLabel="Java"/>
               <f:selectItem itemValue="JavaScript" itemLabel="JavaScript"/>

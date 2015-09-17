@@ -27,21 +27,21 @@ public class Controller implements Serializable {
 
   // Inject the OrderBusinessLogic to update the persisted order
   @Inject
-  private Logic Logic;
+  private Logic logic;
 
   // Caches the OrderEntity during the conversation
-  private QEntity QEntity;
+  private QEntity qEntity;
 
-  public QEntity getQEntity() {
-    if (QEntity == null) {
+  public QEntity getqEntity() {
+    if (qEntity == null) {
       // Load the order entity from the database if not already cached
-      QEntity = Logic.getData((Long) businessProcess.getVariable("questionId"));
+      qEntity = logic.getData((Long) businessProcess.getVariable("questionId"));
     }
-    return QEntity;
+    return qEntity;
   }
 
   public void submitForm() throws IOException {
     // Persist updated order entity and complete task form
-    Logic.mergeOrderAndCompleteTask(QEntity);
+    logic.mergeOrderAndCompleteTask(qEntity);
   }
 }

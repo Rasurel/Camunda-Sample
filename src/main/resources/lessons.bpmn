@@ -60,7 +60,7 @@
       <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
     </bpmn2:userTask>
-    <bpmn2:serviceTask id="ServiceTask_2" camunda:expression="${Logic.persistQuestion(execution)}" name="Persist data">
+    <bpmn2:serviceTask id="ServiceTask_2" camunda:expression="${logic.persistQuestion(execution)}" name="Persist data">
       <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_12</bpmn2:outgoing>
     </bpmn2:serviceTask>

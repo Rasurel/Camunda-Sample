@@ -16,14 +16,14 @@ xmlns:f="http://java.sun.com/jsf/core">
   <title>Approve Answer</title>
 </h:head>
 <h:body>
-  <h1>Data:</h1>
-  Type: #{Controller.QEntity.type}
-  Question: #{Controller.QEntity.question}
-  Answer: #{Controller.QEntity.answer}
+  <h1>Information about the question:</h1>
+  <p>Type: #{controller.qEntity.type} </p><br></br>
+  <p>Question: #{controller.qEntity.question}</p> <br></br>
+  <p>Answer: #{controller.qEntity.answer}</p> <br></br>
   <h:form id="submitForm">
     <h:outputLabel>Approve Answer?</h:outputLabel>
-    <h:selectBooleanCheckbox value="#{Controller.QEntity.approved}"/><br/>
-    <h:commandButton id="submit_button" value="Approve Answer" action="#{Controller.submitForm()}" />
+    <h:selectBooleanCheckbox value="#{controller.qEntity.approved}"/><br/>
+    <h:commandButton id="submit_button" value="Approve Answer" action="#{controller.submitForm()}" />
   </h:form>
 </h:body>
 </f:view>
