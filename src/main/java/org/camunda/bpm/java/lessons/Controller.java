@@ -42,6 +42,6 @@ public class Controller implements Serializable {
 
   public void submitForm() throws IOException {
     // Persist updated order entity and complete task form
-    logic.mergeOrderAndCompleteTask(qEntity);
+    logic.mergeQuestionAndCompleteTask(qEntity);
   }
 }

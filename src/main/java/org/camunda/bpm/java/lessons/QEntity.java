@@ -21,7 +21,7 @@ public class QEntity implements Serializable {
   protected String type;
   protected String question;
   protected String answer;
-  protected boolean answered;
+  protected boolean approved;
 
   public Long getId() {
     return id;
@@ -63,11 +63,11 @@ public class QEntity implements Serializable {
     this.answer = answer;
   }
 
-  public boolean isAnswered() {
-    return answered;
+  public boolean isApproved() {
+    return approved;
   }
 
-  public void setAnswered(boolean answered) {
-    this.answered = answered;
+  public void setApproved(boolean approved) {
+    this.approved = approved;
   }
 }

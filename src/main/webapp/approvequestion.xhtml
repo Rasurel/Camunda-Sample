@@ -6,23 +6,22 @@ xmlns:f="http://java.sun.com/jsf/core">
 
 <f:view>
 <f:metadata>
-  <!-- Start working on a task. Task Id is read internally from
-       request parameters and cached in the CDI conversation scope.
-  -->
-
   <f:event type="preRenderView" listener="#{camundaTaskForm.startTaskForm()}" />
 </f:metadata>
 <h:head>
   <title>Approve Answer</title>
 </h:head>
 <h:body>
-  <h1>Information about the question:</h1>
-  <p>Type: #{controller.qEntity.type} </p><br></br>
-  <p>Question: #{controller.qEntity.question}</p> <br></br>
-  <p>Answer: #{controller.qEntity.answer}</p> <br></br>
-  <h:form id="submitForm">
-    <h:outputLabel>Approve Answer?</h:outputLabel>
-    <h:selectBooleanCheckbox value="#{controller.qEntity.approved}"/><br/>
+    <h1>Summary about the question:</h1>
+  		<p><b>Type:</b>  #{controller.qEntity.type} </p>
+  		<p><b>Question:</b>  #{controller.qEntity.question} </p>
+  		<p><b>Answer:</b>  #{controller.qEntity.answer}</p>
+  		<h:form id="submitForm">
+    	<h:outputLabel><b>Approve</b> the answer?   </h:outputLabel>
+    	<h:selectBooleanCheckbox value="#{controller.qEntity.approved}"/> 
+    	<br/>
+    	<br/>
+  
     <h:commandButton id="submit_button" value="Approve Answer" action="#{controller.submitForm()}" />
   </h:form>
 </h:body>

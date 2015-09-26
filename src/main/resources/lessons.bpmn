@@ -38,7 +38,7 @@
       <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_5" name="Yes" sourceRef="ExclusiveGateway_1" targetRef="UserTask_4">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression">${Logic.getData(questionId).approved}</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression">${logic.getData(questionId).approved}</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:userTask id="UserTask_4" camunda:assignee="demo" camunda:formKey="app:thank.jsf" name="Thank">
       <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
@@ -54,7 +54,7 @@
     </bpmn2:endEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_7" name="" sourceRef="UserTask_5" targetRef="EndEvent_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_8" name="No" sourceRef="ExclusiveGateway_1" targetRef="UserTask_5">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression">${not Logic.getData(questionId).approved}</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression">${not logic.getData(questionId).approved}</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:userTask id="UserTask_2" camunda:assignee="john" camunda:formKey="app:answer.jsf" name="Answer the question">
       <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>

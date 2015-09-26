@@ -3,12 +3,8 @@
   xmlns:ui="http://java.sun.com/jsf/facelets"
   xmlns:h="http://java.sun.com/jsf/html"
   xmlns:f="http://java.sun.com/jsf/core">
- 
 <f:view>
   <f:metadata>
-    <!-- Start a new process instance. The Process Definition Key is read internally from
-         request parameters and cached in the CDI conversation scope.
-    -->
     <f:event type="preRenderView" listener="#{camundaTaskForm.startProcessInstanceByKeyForm()}" />
   </f:metadata>
   <h:head>
@@ -30,14 +26,8 @@
           </h:selectOneMenu>
         </p>
       </h:panelGrid>
- 
-      <!-- The button starts a new process instance. This ends the conversation and redirects us to the tasklist.
- 
-           NOTE: Syntax is different when working on user task forms, see file "approveLoanRequest.xhtml".
-      -->
       <h:commandButton id="submit_button" value="Ask the question" action="#{camundaTaskForm.completeProcessInstanceForm()}" />
- 
-      <!--  <h:messages style="color:red;margin:8px;" /> -->
+  	<h:messages style="color:red;margin:8px;" />  
     </h:form>
   </h:body>
 </f:view>

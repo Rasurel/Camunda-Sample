@@ -6,43 +6,34 @@
 
 <f:view>
   <f:metadata>
-    <!-- Start a new process instance. The Process Definition Key is read internally from
-         request parameters and cached in the CDI conversation scope.
-    -->
     <f:event type="preRenderView" listener="#{camundaTaskForm.startTaskForm()}" />
   </f:metadata>
   <h:head>
     <title>Form your answer</title>
   </h:head>
   <h:body>
-   
+  <h1>Place your answer</h1>
     <h:form id="submitForm">
-      <h:panelGrid columns="2">
-
-   				 <label for="Type">Question Type</label> 
-   				 <br></br>
-   				 <br></br>
-   				 <input class="form-control"
-          			 cam-variable-type="String"
-          			 cam-variable-name="Type"
-           				name="Type"
-           				value="#{processVariables['type']}"
-           				 readonly="true" />
-          				<br></br>
-          				<br></br>
-          <label for="question">Question Text</label>
-          <!-- create process variables using the processVariables map. -->
-          <p><textarea name="question" rows="7" cols="50" value="#{processVariables['question']}" readonly="true"></textarea></p>
-          <label for="answer">Answer Text</label>
-          <!-- create process variables using the processVariables map. -->
-          <p><textarea name="answer" rows="7" cols="50" value="#{processVariables['answer']}" required="true" ></textarea></p>
-        
+      <h:panelGrid columns="1">
+   		<label for="Type">Question Type</label> 
+   		<br></br>
+   		<input class="form-control"
+           	name="Type"
+           	value="#{processVariables['type']}"
+           	readonly="readonly" />
+        <br></br>
+        <br />
+	
+		<label for="question">Question Text</label>
+        <br></br>
+        <h:inputTextarea id="question" value="#{processVariables['question']}" readonly="true" style="height: 94px; width: 220px; "/>
+        <br></br>
+   		
+        <label for="answer">Answer Text</label>
+        <br></br>
+        <h:inputTextarea id="answer" value="#{processVariables['answer']}" readonly="readonly" style="height: 94px; width: 220px; "/>
+      	<br></br>
       </h:panelGrid>
-
-      <!-- The button starts a new process instance. This ends the conversation and redirects us to the tasklist.
-
-           NOTE: Syntax is different when working on user task forms, see file "approveLoanRequest.xhtml".
-      -->
       <h:form id="submitForm">
       <h:commandButton id="submit_button" value="Answer the question" action="#{camundaTaskForm.completeTask()}" />
     </h:form>

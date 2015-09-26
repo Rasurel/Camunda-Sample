@@ -6,10 +6,6 @@
 
 <f:view>
   <f:metadata>
-    <!-- Start working on a task. Task Id is read internally from
-         request parameters and cached in the CDI conversation scope.
-    -->
-
     <f:event type="preRenderView" listener="#{camundaTaskForm.startTaskForm()}" />
   </f:metadata>
   <h:head>

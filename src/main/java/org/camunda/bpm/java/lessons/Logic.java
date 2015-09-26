@@ -17,7 +17,7 @@ public class Logic {
   // Inject the entity manager
   @PersistenceContext
   private EntityManager entityManager;
-private TaskForm taskForm;
+  private TaskForm taskForm;
 
   public void persistQuestion(DelegateExecution delegateExpression) {
     // Create new order instance
@@ -53,9 +53,9 @@ private TaskForm taskForm;
 	    Merge updated order entity and complete task form in one transaction. This ensures
 	    that both changes will rollback if an error occurs during transaction.
 	   */
-	  public void mergeOrderAndCompleteTask(QEntity questionEntity) {
+  public void mergeQuestionAndCompleteTask(QEntity qEntity) {
 	    // Merge detached order entity with current persisted state
-	    entityManager.merge(questionEntity);
+	    entityManager.merge(qEntity);
 	    try {
 	      // Complete user task from
 	      taskForm.completeTask();
